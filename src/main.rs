@@ -2,9 +2,12 @@ use sysinfo::System;
 
 fn main() {
     let mut sys = System::new();
-
     sys.refresh_all();
 
+    print_cpu_info(&sys)
+}
+
+fn print_cpu_info(sys: &System) {
     let cpus = sys.cpus();
 
     println!("CPU");
